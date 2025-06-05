@@ -2,17 +2,19 @@
 SmartQA is a local question-answering system that intelligently combines a fast similarity check using BERT with answer generation via Meta’s LLaMA 3 model. It stores and reuses previous Q&A pairs and allows users to validate or correct answers, continuously improving its usefulness.
 
 🚀 Features
-🔍 Similarity Matching: Checks if a similar question has been answered before using Sentence-BERT.
 
-🧠 Answer Generation: Uses Meta LLaMA-3 8B Instruct model for generating new responses.
+🔍 **Similarity Matching**: Checks if a similar question has been answered before using Sentence-BERT.
 
-✅ Learning via Feedback: Confirms or corrects answers with user input.
+🧠 **Answer Generation:** Uses Meta LLaMA-3 8B Instruct model for generating new responses.
 
-🗂️ Persistent Storage: Saves all Q&A pairs in both SQLite (qa_database.db) and JSON (questionanswer_data.json) formats.
+✅ **Learning via Feedback:** Confirms or corrects answers with user input.
 
-⚙️ Full CPU Utilization: Uses all available cores for fast embedding similarity comparisons and parallel model loading.
+🗂️**Persistent Storage:** Saves all Q&A pairs in both SQLite (qa_database.db) and JSON (questionanswer_data.json) formats.
+
+⚙️**Full CPU Utilization:** Uses all available cores for fast embedding similarity comparisons and parallel model loading.
 
 📁 Project Structure
+
 smartqa/
 
 ├── qa_llm_dtaabase_and_conc.py    # Core backend logic (this file)
