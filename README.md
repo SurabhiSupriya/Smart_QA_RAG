@@ -14,6 +14,7 @@ SmartQA is a local question-answering system that intelligently combines a fast 
 
 📁 Project Structure
 smartqa/
+
 ├── qa_llm_dtaabase_and_conc.py    # Core backend logic (this file)
 
 ├── qa_database.db                 # SQLite database (auto-created)
@@ -27,7 +28,7 @@ smartqa/
 git clone https://github.com/your-username/smartqa.git
 cd smartqa
 
-**2. Install Dependencies **
+**2.Install Dependencies**
 pip install -r requirements.txt
 
 **3. Set Your Hugging Face Token**
