@@ -1,47 +1,38 @@
 🧠 SmartQA – Intelligent Q&A with LLaMA 3 + BERT Memory
-SmartQA is a hybrid local question-answering system that combines the speed of a lightweight similarity model with the intelligence of Meta’s LLaMA 3. It checks if a question has already been answered before generating new responses—and learns from user feedback.
-
-Includes both command-line and Streamlit UI interfaces.
+SmartQA is a local question-answering system that intelligently combines a fast similarity check using BERT with answer generation via Meta’s LLaMA 3 model. It stores and reuses previous Q&A pairs and allows users to validate or correct answers, continuously improving its usefulness.
 
 🚀 Features
-🔍 Checks for similar past questions using Sentence-BERT
+🔍 Similarity Matching: Checks if a similar question has been answered before using Sentence-BERT.
 
-🧠 Generates fresh answers using Meta LLaMA-3 8B Instruct
+🧠 Answer Generation: Uses Meta LLaMA-3 8B Instruct model for generating new responses.
 
-✅ Confirms or corrects answers via user feedback
+✅ Learning via Feedback: Confirms or corrects answers with user input.
 
-📦 Stores Q&A pairs in both SQLite and JSON
+🗂️ Persistent Storage: Saves all Q&A pairs in both SQLite (qa_database.db) and JSON (questionanswer_data.json) formats.
 
-🌐 Optional web UI using Streamlit
+⚙️ Full CPU Utilization: Uses all available cores for fast embedding similarity comparisons and parallel model loading.
 
 📁 Project Structure
-
 smartqa/
-├── smartqa.py           # Main backend logic
-├── smartqa_ui.py        # Streamlit-based web interface
-├── qa_database.db       # SQLite database (auto-created)
-├── questionanswer_data.json  # JSON backup of Q&A (auto-created)
+├── qa_llm_dtaabase_and_conc.py    # Core backend logic (this file)
+├── qa_database.db                 # SQLite database (auto-created)
+├── questionanswer_data.json       # JSON backup of Q&A (auto-created)
 └── README.md
 💻 Getting Started
 **1. Clone the Repo**
-
 git clone https://github.com/your-username/smartqa.git
 cd smartqa
-
-**2. Install Dependencies**
-Create a virtual environment (optional but recommended), then:
-
+**2. Install Dependencies **
 pip install -r requirements.txt
 
 **3. Set Your Hugging Face Token**
-In smartqa.py, replace 'Hugging_face_token' with you own hugging face token
+In the script file (qa_llm_dtaabase_and_conc.py), replace the default token with your own from Hugging Face:
+
 HUGGINGFACE_TOKEN = "your_hf_token_here"
-You can get your token from: https://huggingface.co/settings/tokens
+Generate one here: https://huggingface.co/settings/tokens
 
-🧪 Run the App
-▶️ Option 1: Terminal-based Q&A
+▶️ Running the Script
+Launch the command-line interface:
 
-python smartqa.py
-🌐 Option 2: Web UI with Streamlit
-
-streamlit run smartqa_ui.py
+python qa_llm_dtaabase_and_conc.py
+You’ll be prompted to enter questions and confirm or correct answers, which are saved locally for future reuse.
